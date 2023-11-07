@@ -1,0 +1,25 @@
+{% extends 'translation/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            {{ form.sentence|add_label_class:"form-label" }}
+            {{ form.sentence|add_class:"form-control" }}
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary">翻訳</button>
+    </form>
+
+{% if translation_results %}
+<div class="alert alert-primary mt-3" role="alert">
+    {{ translation_results }}
+</div>
+{% endif %}
+
+{% endblock %}
