@@ -27,4 +27,5 @@ COPY . /app
 # RUN python manage.py collectstatic --noinput
 
 # Run the application
-CMD ["python","manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn","translationApp.wsgi:application"]
+# CMD ["python","manage.py", "runserver", "0.0.0.0:8000"]
