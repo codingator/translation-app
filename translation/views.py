@@ -39,7 +39,7 @@ def index(request):
     else:
         form = TranslationForm()
 
-    template = loader.get_template(r'translation\Index.html')
+    template = loader.get_template(r'translation/Index.html')
     context = {
         'form': form,
         'translation_results':translation_results
